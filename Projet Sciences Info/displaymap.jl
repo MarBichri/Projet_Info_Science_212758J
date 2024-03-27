@@ -1,20 +1,37 @@
-using Images, Colors, Match
+using Images, Colors, ImageView
 
 # Convertit les caractères de la matrice en leur couleur correspondante
 function charToPixel(c::Char)
-    @match c begin
-        '.' || 'G' => RGB(1.0,1.0,1.0)
-        '@' || 'O' => RGB(0.0,0.0,0.0)
-        'T' => RGB(0.0,1.0,0.0)
-        'W' => RGB(0.0,0.0,1.0)
-        'S' => RGB(1.0,0.5,0.0)
-        '*' => RGB(1.0,0.0,0.0)
-        'D' => RGB(0.0,0.0,1.0)
-        'A' => RGB(1.0,0.0,1.0)
-    end
+if (c == '.' || c == 'G')
+		return RGB(1.0,1.0,1.0)
+	else 
+		if (c == 'S')
+			return RGB(1.0,0.5,0.0)
+		else 
+			if (c == 'W')
+				return RGB(0.0,0.0,1.0)
+			else
+				if (c == '@' || c == 'O')
+					return RGB(0.0,0.0,0.0)
+				else
+					if (c == 'T')
+						return RGB(0.0,1.0,0.0)
+					else
+					
+						if (c == 'V')
+							return RGB(1.0,0.75,0.75)
+						else
+						
+							return RGB(1.0,0.0,0.0)
+						end
+					end
+				end
+			end
+		end
+	end
 end
 
-# Sauvegarde la carte sous un png
+#Affiche la carte mise en entrée
 function afficher_carte(map::Matrix{Char}, nom::String)
     img = Matrix{RGB{Float64}}(undef, size(map,1), size(map,2))
 
@@ -24,5 +41,5 @@ function afficher_carte(map::Matrix{Char}, nom::String)
         end
     end
     
-    Images.save(nom, img)
+    ImageView.imshow(img, axes=(1,2), name=nom)
 end

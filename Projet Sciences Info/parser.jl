@@ -22,3 +22,11 @@ function modifmap(map::Matrix{Char}, chemin::Vector{Tuple{Int64,Int64}})
     end
     return map
 end
+
+# Modifie une matrice carte pour y inclure les cases visitées
+function modifmap2(map::Matrix{Char}, chemin::Set{Tuple{Int64,Int64}})
+    for e in chemin
+        map[e[1],e[2]] = 'V'
+    end
+    return map
+end
