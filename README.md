@@ -22,6 +22,8 @@ Orange : Sable
 
 Rouge : Chemin emprunté
 
+Rose : Cases visitées
+
 Magenta : Point d'arrivée
 
 Dans le dossier Map sont inclus les derniers résultats des algorithmes sur une carte.
