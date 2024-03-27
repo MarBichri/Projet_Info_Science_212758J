@@ -41,5 +41,6 @@ function afficher_carte(map::Matrix{Char}, nom::String)
         end
     end
     
+    Images.save(string("Map/",nom,".png"),img)
     ImageView.imshow(img, axes=(1,2), name=nom)
 end
