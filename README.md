@@ -11,11 +11,17 @@ La fonction affiche la distance parcourue et le nombre d'états visité pour cha
 Les cartes sont représentées en image dont chaque pixel représente une case.
 
 Noir : Obstacle
+
 Blanc : Terrain
+
 Vert : Arbre
+
 Bleu : Eau / Point de Départ
+
 Orange : Sable
+
 Rouge : Chemin emprunté
+
 Magenta : Point d'arrivée
 
 Dans le dossier Map sont inclus les derniers résultats des algorithmes sur les trois cartes dans Benchmarks. Appeler l'algorithme sur la même carte écrase la carte précédente, donc il faut ouvrir l'image avant de la remplacer.
